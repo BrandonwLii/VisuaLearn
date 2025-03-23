@@ -23,7 +23,7 @@ VisuaLearn is a desktop application that leverages Google's Gemini AI to provide
 
 1. Clone the repository:
    ```
-   git clone https://github.com/ShoAdachi01/VisuaLearn.git
+   git clone https://github.com/BrandonwLii/VisuaLearn.git
    cd VisuaLearn
    ```
 
