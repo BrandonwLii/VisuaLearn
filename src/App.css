@@ -1,8 +1,68 @@
+/* Draggable region styles */
+.draggable {
+  -webkit-app-region: drag;
+  app-region: drag;
+}
+
+/* Explicitly non-draggable elements */
+.no-drag,
+.no-drag * {
+  -webkit-app-region: no-drag !important;
+  app-region: no-drag !important;
+}
+
+/* Non-draggable elements inside draggable regions */
+.draggable button,
+.draggable a,
+.draggable input,
+.draggable select,
+.draggable [role="button"] {
+  -webkit-app-region: no-drag;
+  app-region: no-drag;
+}
+
+/* Main app container styling */
+.app-container {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  /* Add resize handle styling */
+  resize: both;
+  min-width: 400px;
+  min-height: 500px;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+/* Resize handle styling */
+.app-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  cursor: nwse-resize;
+}
+
+/* Make sure Electron's transparent window shows content properly */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: transparent !important;
+  height: 100vh;
+  overflow: hidden;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background-color: transparent !important;
 }
 
 .logo {
